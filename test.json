@@ -1,0 +1,53 @@
+{
+  "endpoint": "http://rsmsrv01.nci.org.au:8080/fuseki/Wikidata/sparql",
+  "queries": [
+    {
+      "query": "SELECT ?s WHERE { ?s ?p ?o FILTER(REGEX(?o, 'testing', 'i')) }",
+      "description": "Text query - no predicate - no distinct"
+    },
+    {
+      "query": "SELECT ?s WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> ?o FILTER(REGEX(?o, 'testing', 'i')) }",
+      "description": "Text query - rdfs:label predicate - no distinct"
+    },
+    {
+      "query": "SELECT DISTINCT ?s WHERE { ?s ?p ?o FILTER(REGEX(?o, 'testing', 'i')) }",
+      "description": "Text query - no predicate -  distinct"
+    },
+    {
+      "query": "SELECT DISTINCT ?s WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> ?o FILTER(REGEX(?o, 'testing', 'i')) }",
+      "description": "Text query - rdfs:label predicate - distinct"
+    },
+    {
+      "query": "SELECT ?o WHERE { ?s <file:///home/andnfitz/GovernmentEntities.owl#Enables> ?o }",
+      "description": "Get all objects of enables"
+    },
+    {
+      "query": "SELECT ?o WHERE { ?s <file:///home/andnfitz/GovernmentEntities.owl#Enables> ?o }",
+      "description": "Get all *distinct* objects of enables"
+    },
+    {
+      "query": "SELECT ?o WHERE { ?s <file:///C:/SophiaBuild/data/OntologyFiles/GovernmentEntities.owl#hasExemptionFrom> ?o }",
+      "description": "Get all objects of hasExemption"
+    },
+    {
+      "query": "SELECT DISTINCT ?o WHERE { ?s <file:///C:/SophiaBuild/data/OntologyFiles/GovernmentEntities.owl#hasExemptionFrom> ?o }",
+      "description": "Get all *distinct* objects of hasExemption"
+    },
+    {
+      "query": "SELECT ?s WHERE { ?s a <file:///C:/SophiaBuild/data/OntologyFiles/GovernmentEntities.owl#PortfolioBudgetStatement> }",
+      "description": "Get all instances of Portfolio"
+    },
+    {
+      "query": "SELECT DISTINCT ?s WHERE { ?s a <file:///C:/SophiaBuild/data/OntologyFiles/GovernmentEntities.owl#PortfolioBudgetStatement> }",
+      "description": "Get all instances of Portfolio (distinct)"
+    },
+    {
+      "query": "SELECT ?s WHERE { ?s a <file:///C:/SophiaBuild/data/OntologyFiles/GovernmentEntities.owl#FROLEnd> }",
+      "description": "Get all instances of FROLEnd"
+    },
+    {
+      "query": "SELECT DISTINCT ?s WHERE { ?s a <file:///C:/SophiaBuild/data/OntologyFiles/GovernmentEntities.owl#FROLEnd> }",
+      "description": "Get all instances of FROLEnd (distinct)"
+    }
+  ]
+}
